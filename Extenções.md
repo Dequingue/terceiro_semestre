@@ -4,7 +4,7 @@
 3. pylance
 4. dracula or origamidnext 
 5. codeSnap
-6.
+6. vscode icons
 
 
 
