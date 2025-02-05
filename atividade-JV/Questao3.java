@@ -7,7 +7,7 @@ public class Questao3 {
             System.out.println("Encontre o IMC");
 
             System.out.println("Digite seu Peso: ");
-            float peso=sc.nextFloat();
+            double peso=sc.nextDouble();
 
             // Verifica se o peso é válido
             if (peso <= 0) {
@@ -17,17 +17,17 @@ public class Questao3 {
             }
 
             System.out.println("Digite sua Altura: ");
-            float altura=sc.nextFloat();
+            double altura=sc.nextDouble();
 
             if (altura <= 0) {
                 System.out.println("Altura inválida.");
                 return;
             }
 
-            float imc = peso/(altura*altura);
+            double imc = peso/(altura*altura);
 
 
-            System.out.printf("O IMC é: %.2f%n",imc);
+            System.out.println("O IMC é: "+imc);
         }
     }
 }
