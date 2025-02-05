@@ -12,7 +12,7 @@ public class Questao3 {
             System.out.println("Digite sua Autura: ");
             double a=sc.nextDouble();
 
-            double imc = p/(a*2);
+            double imc = p/(a*a);
 
             System.out.println("O IMC é: "+imc);
         }
