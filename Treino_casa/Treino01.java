@@ -25,6 +25,17 @@ public class Treino01{
 
             while (opcao !=5) {
 
+                os = System.getProperty("os.name").toLowerCase();
+                try {
+                    if (os.contains("win")) {
+                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                    } else {
+                        new ProcessBuilder("clear").inheritIO().start().waitFor();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 System.out.println("====== MENU ======");
                 System.out.println("1. Nome");
                 System.out.println("2. Idade");
