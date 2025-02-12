@@ -12,7 +12,7 @@ public class Clear {
             e.printStackTrace();
         }
 
-         //Equivalente ao time.sleep() do python 
+                        //Equivalente ao time.sleep() do python 
                         try {
                             Thread.sleep(2000); // Pausa por 2 segundos (2000 milissegundos)
                         } catch (InterruptedException e) {
