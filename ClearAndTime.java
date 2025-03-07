@@ -1,6 +1,7 @@
 public class Clear {
     
     public static void main(String[] args) {
+        //Clear do java
         String os = System.getProperty("os.name").toLowerCase();
         try {
             if (os.contains("win")) {
