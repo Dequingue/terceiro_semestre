@@ -53,32 +53,65 @@ public class Main {
                         if(list.isEmpty()){
                             System.out.println("Lista vazia");
                         }else{
-                            for (Livros lv : list) {
-                                System.out.println(lv+"\nTitulo: "+lv.getTitulo()+"\nAutor: "+lv.getAutor()+"\nAno Publicado: "+lv.getAnoPublicado()+"\nPreço: "+lv.getPreco()+"\n");
+                            for (int i = 0; i < list.size(); i++) {
+                                Livros lv = list.get(i);
+                                System.out.println("\nIndice: "+i);
+                                System.out.println("\nTitulo: "+lv.getTitulo()
+                                +"\nAutor: "+lv.getAutor()
+                                +"\nAno Publicado: "+lv.getAnoPublicado()
+                                +"\nPreço: "+lv.getPreco()+"\n");
                             }                            
                         }
 
 
                         break;
                     case 3:
-                        
+                        if (list.isEmpty()) {
+                            System.out.println("Lista vazia, nada para alterar.");
+                        } else {
+                            System.out.print("Informe o índice do livro a ser alterado: ");
+                            int indice = sc.nextInt();
+
+                            if (indice >= 0 && indice < list.size()) {
+                                Livros livro = list.get(indice);
+
+                                System.out.println("Alterando o livro: " + livro.getTitulo());
+                                System.out.print("Novo título (atual: " + livro.getTitulo() + "): ");
+                                titulo = sc.next();
+                                System.out.print("Novo autor (atual: " + livro.getAutor() + "): ");
+                                autor = sc.next();
+                                System.out.print("Novo ano publicado (atual: " + livro.getAnoPublicado() + "): ");
+                                anoPublicado = sc.nextInt();
+                                System.out.print("Novo preço (atual: " + livro.getPreco() + "): ");
+                                preco = sc.nextDouble();
+
+                                livro.setTitulo(titulo);
+                                livro.setAutor(autor);
+                                livro.setAnoPublicado(anoPublicado);
+                                livro.setPreco(preco);
+
+                             System.out.println("Livro atualizado com sucesso!");
+                            } else {
+                             System.out.println("Índice inválido!");
+                            }
+                        }
                         break;
                     case 4:
                         if(list.isEmpty()){
                             System.out.println("Lista vazia");
                         }else{
                             System.out.println("Informe o indece a ser removido: ");
-                            int indice = sc.nextInt();
+                            int indi = sc.nextInt();
 
-                            if(indice>=0 && indice<list.size()){
-                                list.remove(indice);
+                            if(indi>=0 && indi<list.size()){
+                                list.remove(indi);
                                 System.out.println("Livro removido com Sucesso!");
                             }
                         }
                         
                         break;
                     case 5:
-                        
+                        System.out.println("Systema Encerrado.....");
                         break;    
                     default:
                         System.out.println("ERRO invalido!!!!");
