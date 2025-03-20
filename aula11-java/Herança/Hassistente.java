@@ -16,7 +16,12 @@ public class Hassistente extends Heranca{
     }
     
 
+    //Outra forma de realizar:
     
+   /*  public double calcular(){
+        return super.getSalario()*0.05;
+    }
+    */   
 
     
 }
