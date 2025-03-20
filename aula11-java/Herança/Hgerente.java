@@ -15,4 +15,9 @@ public class Hgerente extends Heranca{
         this.bonus = bonus;
     }
     
+    //Outra forma de fazer:
+
+    /* public double calcular(){
+        return super.getSalario()*0.10;
+    }*/
 }
