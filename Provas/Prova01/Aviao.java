@@ -20,6 +20,10 @@ class Aviao {
     public int getCapacidadeTotal() {
         return capacidadeTotal;
     }
+
+    //Verifica se ainda há assentos disponíveis
+    //caso tenha, reduz a quantidade de assentos disponiveis
+    //retorna para true que mostra que a reserva foi realizada com sucesso
     
     public boolean reservarAssento() {
         if (assentosDisponiveis > 0) {
