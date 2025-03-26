@@ -25,10 +25,12 @@ public class Aeroporto {
                 
                 switch (opcao) {
                     case 1:
+                          //Limitar o cadastro de aviões ate 4
                         if (avioes.size() >= 4) {
                             System.out.println("Já existem 4 aviões cadastrados.");
                             break;
                         }
+                          //O usuário informa o número do avião e a quantidade de assentos.
                         System.out.print("Informe o número do avião: ");
                         int numeroAviao = sc.nextInt();
                         System.out.print("Informe a quantidade de assentos: ");
@@ -38,6 +40,9 @@ public class Aeroporto {
                         break;
                     
                     case 2:
+                          //Percorre a lista de aviões e exibe quantos assentos estão disponíveis em cada um.
+
+
                         System.out.println("\n==== Quantidade De Assentos ====");
                         for (Aviao aviao : avioes) {
                             System.out.println("Avião " + aviao.getNumero() + ": " + aviao.getAssentosDisponiveis() + " assentos disponíveis");
@@ -45,16 +50,21 @@ public class Aeroporto {
                         break;
                     
                     case 3:
+                          //Verifica o limite de reservas (máximo 20).
                         if (reservas.size() >= 20) {
                             System.out.println("Limite de 20 reservas atingido.");
                             break;
                         }
+                          //Pede o número do avião e verifica se ele existe na lista avioes
                         System.out.print("Informe o número do avião: ");
                         numeroAviao = sc.nextInt();
-                        sc.nextLine();
-                        
-                        Aviao aviaoSelecionado = null;
+                        sc.nextLine();// limpa o buffer do teclado para evitar problemas com entradas.
+                          
+                       
+                        Aviao aviaoSelecionado = null;//verifica se alguma reserva foi encontrada
                         for (Aviao aviao : avioes) {
+                              /* procura avião na lista caso tenha o número informado pelo usuário.
+                              ele armazena esse avião na variável */
                             if (aviao.getNumero() == numeroAviao) {
                                 aviaoSelecionado = aviao;
                                 break;
@@ -70,7 +80,7 @@ public class Aeroporto {
                             System.out.println("Não há assentos disponíveis para este avião!");
                             break;
                         }
-                        
+                        //solicita o nome do passageiro e confirma a reserva
                         System.out.print("Informe o nome do passageiro: ");
                         String nome = sc.nextLine();
                         reservas.add(new Pessoa(nome, numeroAviao));
@@ -78,12 +88,13 @@ public class Aeroporto {
                         break;
                     
                     case 4:
+                          //Solicita o número do avião e lista os passageiros que reservaram assentos nesse avião.
                         System.out.print("Informe o número do avião: ");
                         numeroAviao = sc.nextInt();
                         
-                        boolean encontrou = false;
+                        boolean encontrou = false;// verifica se existe reservas 
                         System.out.println("Reservas para o avião " + numeroAviao + ":");
-                        for (Pessoa reserva : reservas) {
+                        for (Pessoa reserva : reservas) {// percorre todas as reservas existentes
                             if (reserva.getNumeroAviao() == numeroAviao) {
                                 System.out.println("Passageiro: " + reserva.getNome());
                                 encontrou = true;
@@ -95,6 +106,7 @@ public class Aeroporto {
                         break;
                     
                     case 5:
+                          //Pede o nome do passageiro e exibe os aviões onde ele possui reservas.
                         System.out.print("Informe o nome do passageiro: ");
                         nome = sc.nextLine();
                         
@@ -106,12 +118,13 @@ public class Aeroporto {
                                 encontrou = true;
                             }
                         }
-                        if (!encontrou) {
+                        if (!encontrou) {//se encontrou fo == false
                             System.out.println("Não há reservas realizadas para este passageiro!");
                         }
                         break;
                     
                     case 6:
+                          //Finaliza o programa.
                         System.out.println("Encerrando sistema...");
                         
                         return;
