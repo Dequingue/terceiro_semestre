@@ -1,6 +1,6 @@
 pip install auto-py-to-exe
 
 auto-py-to-exe
-apelar: python -m auto-py-to-exe
+apelar: python -m auto_py_to_exe
 
 pip install customtkinter
