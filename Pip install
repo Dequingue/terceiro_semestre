@@ -1,6 +1,7 @@
-pip install auto-py-to-exe
+compilar para arquivo exe:
+-pip install auto-py-to-exe
+-auto-py-to-exe
+-apelar: python -m auto_py_to_exe
 
-auto-py-to-exe
-apelar: python -m auto_py_to_exe
-
-pip install customtkinter
+baixar custom:
+-pip install customtkinter
