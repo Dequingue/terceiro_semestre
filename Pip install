@@ -5,3 +5,8 @@ compilar para arquivo exe:
 
 baixar custom:
 -pip install customtkinter
+
+
+qrcode:
+-pip install qrcode
+-pip install qrcode[pill] pillow
