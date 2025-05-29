@@ -10,3 +10,6 @@ baixar custom:
 qrcode:
 -pip install qrcode
 -pip install qrcode[pill] pillow
+
+pegar excell:
+-pip install openpyxl
