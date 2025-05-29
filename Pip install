@@ -11,5 +11,6 @@ qrcode:
 -pip install qrcode
 -pip install qrcode[pill] pillow
 
-pegar excell:
+pegar excell e txt:
 -pip install openpyxl
+-pip install docxtpl
