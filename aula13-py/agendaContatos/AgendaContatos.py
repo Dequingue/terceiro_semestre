@@ -7,8 +7,9 @@ def add_contato():
     t = telefone.get()
     e = email.get()
     
-    if(n,t,e):
-        lista_contatos.insert(0,n,t,e)
+    if n and t and e:
+        contato_format = (f"Nome: {n} / Telefone: {t} / E-mail: {e}")
+        lista_contatos.insert(0,contato_format)
         nome.delete(0,'end')
         telefone.delete(0,'end')
         email.delete(0,'end')
@@ -20,16 +21,16 @@ def salvar_contatos():
     with open('contatos.txt','w') as ta:
         contatos = lista_contatos.get(0,END)
 
-        for x in contatos:
-            ta.write(x+'\n')
+        for contato in contatos:
+            ta.write(contato + "\n")
             
 def carregar_contatos():
     
     if(salvar_contatos()):
         with open('contatos.txt','r') as ta:
             contatos = ta.readlines()
-            for x in contatos:
-                lista_contatos.insert(0,x.strip())
+            for contato in contatos:
+                lista_contatos.insert(0,contato.strip())
     else:
         with open('contatos.txt','w') as ta:
             contatos = lista_contatos.get(0,END)
